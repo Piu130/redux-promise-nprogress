@@ -76,15 +76,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_nprogress__);
 
 
-/* harmony default export */ __webpack_exports__["default"] = store => next => action => {
-  if (action.type) {
-    if (action.type.endsWith('PENDING')) {
-      __WEBPACK_IMPORTED_MODULE_0_nprogress___default.a.start();
-    } else if (action.type.endsWith('FULFILLED') || action.type.endsWith('REJECTED')) {
-      __WEBPACK_IMPORTED_MODULE_0_nprogress___default.a.done();
+/* harmony default export */ __webpack_exports__["default"] = function () {
+  return store => next => action => {
+    if (action.type) {
+      if (action.type.endsWith('PENDING')) {
+        __WEBPACK_IMPORTED_MODULE_0_nprogress___default.a.start();
+      } else if (action.type.endsWith('FULFILLED') || action.type.endsWith('REJECTED')) {
+        __WEBPACK_IMPORTED_MODULE_0_nprogress___default.a.done();
+      }
     }
-  }
-  return next(action);
+    return next(action);
+  };
 };
 
 /***/ }),
